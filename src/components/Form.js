@@ -1,25 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 
-
-function Form() {
-  const [newsletter, setNewsletter] = useState(false);
-
-  function handleNewsletterChange(event) {
-    // .checked, not .value!
-    setNewsletter(event.target.checked);
-  }
-
+function Form(props) {
   return (
     <form>
-      <label htmlFor="newsletter">Subscribe to our Newsletter?</label>
       <input
-        type="checkbox"
-        id="newsletter"
-        onChange={handleNewsletterChange}
-        checked={newsletter}
+        type="text"
+        onChange={props.handleFirstNameChange}
+        value={props.firstName}
+      />
+      <input
+        type="text"
+        onChange={props.handleLastNameChange}
+        value={props.lastName}
       />
       <button type="submit">Submit</button>
     </form>
   );
 }
+
+
 export default Form;
