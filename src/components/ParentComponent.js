@@ -18,11 +18,15 @@ function ParentComponent() {
 
 
   return (
-    <form>
-      <input onChange={handleFirstNameChange} type="text" value={firstName} />
-      <input onChange={handleLastNameChange} type="text" value={lastName} />
-      <button type="submit">Submit</button>
-    </form>
+    <div>
+    <Form
+        firstName={firstName}
+        lastName={lastName}
+        handleFirstNameChange={handleFirstNameChange}
+        handleLastNameChange={handleLastNameChange}
+    />
+    <DisplayData firstName={firstName} lastName={lastName} />
+    </div>
   );
 }
 
